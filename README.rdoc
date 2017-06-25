@@ -1,3 +1,17 @@
 = activity_by_issue_status
 
-Description goes here
+## Description
+
+This plugin help use filter activities in time log base on current issue's status.
+
+## Usage
+
+### Run DB migrate
+
+```
+RAILS_ENV=development|test|production rake redmine:plugins:migrate
+```
+
+### Config which activity is available to each issue status
+
+Eg: `enumerations/8/edit`
