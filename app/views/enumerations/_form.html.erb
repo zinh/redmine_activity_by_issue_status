@@ -9,10 +9,13 @@
     <p><%= custom_field_tag_with_label :enumeration, value %></p>
   <% end %>
 
-  <%= f.collection_check_boxes(:issue_status_ids, IssueStatus.all, :id, :name) do |b| %>
+  <%- if f.object.type == 'TimeEntryActivity' %>
     <p>
-    <label><%= b.text -%></label>
-    <%= b.check_box -%>
+      <label>Issue Statuses</label>
+      <%= f.collection_check_boxes(:issue_status_ids, IssueStatus.all, :id, :name) do |b| %>
+        <label class="block"> <%= b.check_box -%> <%= b.text -%></label>
+      <% end %>
     </p>
-  <% end if f.object.type == 'TimeEntryActivity' %>
+  <% end %>
+
 </div>

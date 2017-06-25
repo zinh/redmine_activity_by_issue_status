@@ -8,5 +8,6 @@ Redmine::Plugin.register :activity_by_issue_status do
   ActionDispatch::Callbacks.to_prepare do
     require 'time_entry_activity_patch'
     require 'issue_status_patch'
+    require 'timelog_helper_patch'
   end
 end
