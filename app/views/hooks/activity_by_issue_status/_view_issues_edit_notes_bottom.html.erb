@@ -1,0 +1,5 @@
+<script>
+var activity_select_box = $("#time_entry_activity_id");
+activity_select_box.empty().append("<option><%= l(:actionview_instancetag_blank_option) -%></option>");
+activity_select_box.append('<%= options_from_collection_for_select(issue.status.time_entry_activities, 'id', 'name' ) -%>');
+</script>
